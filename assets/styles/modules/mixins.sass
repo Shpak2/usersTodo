@@ -1,0 +1,53 @@
+@use 'sass:math'
+@use 'variables.sass' as *
+
+@mixin font-face( $font-family, $file-path, $weight: normal, $style: normal )
+	@font-face
+		font-family: $font-family
+		font-weight: $weight
+		font-style: $style
+		src: url($file-path+".eot")
+		src: url($file-path+'.eot?#iefix') format('embedded-opentype'), url($file-path+".woff") format("woff"), url($file-path+'.ttf') format('truetype')
+		font-display: swap
+
+// PX TO VW
+@function vw_big_screen( $value )
+	$vw-context: $vp-big-screen * 0.01 * 1px
+	@return math.div($value, $vw-context) * 1vw
+
+@function vw_tabs( $value )
+	$vw-context: $vp-small-tabs * 0.01 * 1px
+	@return math.div($value, $vw-context) * 1vw
+
+@function vmin_mobile( $value )
+	$vw-context: $vp-small-mobile * 0.01 * 1px
+	@return math.div($value, $vw-context) * 1vmin
+
+
+// VIEWPORTS MEDIA
+@mixin viewport($point)
+	@if $point == hover
+		@media only screen and (hover: hover)
+			@content
+
+	@else if $point == nothover
+		@media only screen and (hover: none)
+			@content
+
+
+@mixin min_viewport( $point )
+	@if $point == desktop
+		@media only screen and (min-width: #{$vp-laptop}px)
+			@content
+
+	@else if $point == laptop
+		@media only screen and (min-width: #{$vp-tabs}px)
+			@content
+
+	@else if $point == stabs
+		@media only screen and (min-width: #{$vp-small-tabs}px)
+			@content
+
+	@else if $point == tabs
+		@media only screen and (min-width: #{$vp-mobile}px)
+			@content

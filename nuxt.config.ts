@@ -5,5 +5,18 @@ export default defineNuxtConfig({
   ],
   devtools: {
     enabled: true
-  }
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@use "@/assets/styles/modules/mixins.sass" as *',
+        },
+      },
+    },
+  },
+  css: [
+    'normalize.css',
+    '@/assets/styles/main.sass',
+  ],
 })
