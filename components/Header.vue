@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useSearchStore } from '~/stores/searchStore';
+  import { useSearchStore } from '~/stores/search';
 
   const searchStore = useSearchStore();
   const isSearchOpen = computed(() => searchStore.isSearchOpen);

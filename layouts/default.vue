@@ -12,7 +12,7 @@
 
   import { useRoute } from 'vue-router';
   import { computed } from 'vue';
-  import { useSearchStore } from '~/stores/searchStore';
+  import { useSearchStore } from '~/stores/search';
 
   const route = useRoute();
   const searchStore = useSearchStore();

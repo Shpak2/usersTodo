@@ -27,7 +27,7 @@
 <script setup lang="ts">
 
   import { useUsersStore } from '~/stores/users';
-  import { useSearchStore } from '~/stores/searchStore';
+  import { useSearchStore } from '~/stores/search';
   import { ref, computed } from 'vue';
 
   const userStore = useUsersStore();
