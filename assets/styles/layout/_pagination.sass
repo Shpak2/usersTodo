@@ -1,0 +1,34 @@
+@use "@/assets/styles/modules/mixins.sass" as *
+
+.pagination
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: vmin_mobile(6px)
+  width: 100%
+  padding-bottom: vmin_mobile(20px)
+  &-btn
+    display: flex
+    justify-content: center
+    align-items: center
+    width: vmin_mobile(36px)
+    aspect-ratio: 1
+    border-radius: 50%
+    background-color: transparent
+    transition: 0.2s ease
+    font-size: vmin_mobile(14px)
+    &[disabled]
+      pointer-events: none
+      & svg
+        fill: #59595A
+    @include viewport(nothover)
+      &:active
+        background-color: #7C7D7E
+    @include viewport(hover)
+      &:hover
+        background-color: #7C7D7E
+    &.active
+      background-color: #7C7D7E
+      color: #fff
+    & svg
+      width: 70%

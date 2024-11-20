@@ -1,0 +1,44 @@
+@use "@/assets/styles/modules/mixins.sass" as *
+
+.todo
+  padding: 0 vmin_mobile(20px)
+  &__title
+    font-size: vmin_mobile(24px)
+    margin: 0 0 vmin_mobile(10px)
+  &__link
+    color: #3399ff
+    font-size: vmin_mobile(16px)
+    @include viewport(hover)
+      &:hover
+        text-decoration: none
+  &-list
+    padding: vmin_mobile(20px)
+    &__items
+      padding: vmin_mobile(10px) vmin_mobile(20px)
+      max-height: vmin_mobile(600px)
+      overflow: auto
+    &__item
+      border: 1px solid #EDEAEA
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+      padding: vmin_mobile(10px) vmin_mobile(10px)
+      border-radius: 6px
+      transition: 0.2s ease
+      @include viewport(hover)
+        &:hover
+          transform: translateY(-3px)
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+      &-title
+        margin: 0
+        font-size: vmin_mobile(18px)
+      &-status
+        margin: 0
+        font-size: vmin_mobile(14px)
+        margin-top: vmin_mobile(10px)
+      &:not(:last-child)
+        margin-bottom: vmin_mobile(10px)
+      &.completed &-title
+        text-decoration: line-through
+      &.completed &-status
+        color: #2BCD97
+      &.not-completed &-status
+        color: #F22B2C

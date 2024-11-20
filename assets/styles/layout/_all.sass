@@ -1,0 +1,48 @@
+@use "@/assets/styles/modules/mixins.sass" as *
+
+@include font-face("Inter", "~/assets/fonts/Inter/Inter-Regular", 400)
+@include font-face("Inter", "~/assets/fonts/Inter/Inter-Bold", 700)
+
+body
+  font-family: "Inter", sans-serif
+  font-weight: 400
+  background: #F7F8FC
+
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+
+svg
+  width: 100%
+  height: auto
+
+button
+  padding: 0
+  outline: none
+  border: none
+  cursor: pointer
+
+main
+  position: relative
+  padding-top: vmin_mobile(10px)
+
+*
+  box-sizing: border-box
+  &:active
+    outline: none
+    -webkit-tap-highlight-color: transparent
+
+.preloader
+  display: flex
+  background: #fff
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  align-items: center
+  justify-content: center
+  background-color: #c1c1c1
+  & svg
+    width: vmin_mobile(130px)

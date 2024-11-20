@@ -10,7 +10,7 @@
 		src: url($file-path+'.eot?#iefix') format('embedded-opentype'), url($file-path+".woff") format("woff"), url($file-path+'.ttf') format('truetype')
 		font-display: swap
 
-// PX TO VW
+
 @function vw_big_screen( $value )
 	$vw-context: $vp-big-screen * 0.01 * 1px
 	@return math.div($value, $vw-context) * 1vw
@@ -24,7 +24,6 @@
 	@return math.div($value, $vw-context) * 1vmin
 
 
-// VIEWPORTS MEDIA
 @mixin viewport($point)
 	@if $point == hover
 		@media only screen and (hover: hover)

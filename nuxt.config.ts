@@ -10,7 +10,9 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         sass: {
-          additionalData: '@use "@/assets/styles/modules/mixins.sass" as *',
+          additionalData: `
+            @use "@/assets/styles/modules/mixins.sass" as *
+          `,
         },
       },
     },

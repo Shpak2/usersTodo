@@ -1,0 +1,27 @@
+@use "@/assets/styles/modules/mixins.sass" as *
+
+.header
+  background: #353740
+  height: vmin_mobile(70px)
+  padding: 0 vmin_mobile(20px)
+  display: flex
+  align-items: center
+  justify-content: space-between
+  & h1
+    color: #3399ff
+    margin: 0
+    font-size: vmin_mobile(18px)
+    line-height: 1.2
+  &__btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: vmin_mobile(40px)
+    aspect-ratio: 1
+    padding: 0
+    border-radius: 5px
+    background-color: #1d1e22
+    transition: 0.2s ease
+    @include viewport(hover)
+      &:hover
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)

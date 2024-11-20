@@ -1,0 +1,51 @@
+@use "@/assets/styles/modules/mixins.sass" as *
+
+.search
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  background-color: rgba(0, 0, 0, 0.2)
+  backdrop-filter: blur(10px)
+  &-input
+    width: 100%
+    font-weight: 400
+    font-size: vmin_mobile(16px)
+    padding: vmin_mobile(6px) vmin_mobile(8px)
+    line-height: 1.2
+    color: #000
+    cursor: text
+    display: inline-flex
+    align-items: center
+    border-radius: 4px
+    outline: none
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)
+    &::placeholder
+      color: #000
+  &-results
+    width: 100%
+    font-size: vmin_mobile(18px)
+    max-height: vmin_mobile(150px)
+    overflow: auto
+    padding: vmin_mobile(8px)
+    background-color: #353740
+    border-radius: 4px
+    &__item
+      background-color: #5b5b5b
+      border-radius: 4px
+      padding: vmin_mobile(4px) vmin_mobile(8px)
+      text-decoration: none
+      font-size: vmin_mobile(18px)
+      color: #fff
+      display: block
+      transition: 0.2s ease
+      @include viewport(hover)
+        &:hover
+          color: #3399ff
+          transform: translateY(-3px)
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+      &:not(:last-child)
+        margin-bottom: vmin_mobile(8px)
+

@@ -1,0 +1,47 @@
+@use "@/assets/styles/modules/mixins.sass" as *
+
+.user
+  &-table
+    border-collapse: collapse
+    margin: vmin_mobile(20px) vmin_mobile(4px)
+    &__link
+      text-decoration: none
+      font-weight: 700
+      color: #fff
+      transition: 0.2s ease
+      @include viewport(hover)
+        &:hover
+          color: #3399ff
+    &__header
+      background-color: #121212
+      color: #3399ff
+      &-cell
+        width: vmin_mobile(130px)
+        padding: vmin_mobile(10px) vmin_mobile(6px)
+        font-size: vmin_mobile(16px)
+        @include min_viewport(tabs)
+          width: 33vw
+        &:first-child
+          border-top-left-radius: 4px
+        &:last-child
+          border-top-right-radius: 4px
+    &__body
+      &-row
+        font-size: vmin_mobile(12px)
+      &-cell
+        width: vmin_mobile(130px)
+        height: vmin_mobile(40px)
+        padding: 0 vmin_mobile(6px)
+        word-break: break-all
+        text-align: center
+        color: #fff
+        @include min_viewport(tabs)
+          width: 33vw
+      &-row:nth-child(even) &-cell
+        background-color: #181818
+      &-row:nth-child(odd) &-cell
+        background-color: #222222
+      &-row:last-child &-cell:first-child
+        border-bottom-left-radius: 4px
+      &-row:last-child &-cell:last-child
+        border-bottom-right-radius: 4px
