@@ -17,7 +17,7 @@
       </li>
     </ul>
   </div>
-  <div v-else class="todo-list--empty">
+  <div v-else class="todo-list__empty">
     <p class="todo-list__empty-message">No todos found.</p>
   </div>
 </template>
